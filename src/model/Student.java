@@ -1,27 +1,23 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
+import model.enums.FormOfEducation;
+import model.enums.Role;
 
-enum FormOfEducation {
-  IN_PERSON,
-  FROM_DISTANCE,
-  PARTIAL
-}
-
-class Student extends Person {
-  private String faculty_number;
+public class Student extends Person {
+  private String facultyNumber;
   private List<Course> courses;
   private List<Double> grades;
   private FormOfEducation form_of_education;
 
   public Student(String name, String id, Role role) {
     super(name, id, role);
-    this.faculty_number = "";
+    this.facultyNumber = "";
     this.courses = new ArrayList<>();
     this.grades = new ArrayList<>();
     this.form_of_education = FormOfEducation.IN_PERSON;
   }
-
-  // Enroll/drop courses
 
   public void enroll(Course course) {
     this.courses.add(course);
@@ -38,5 +34,21 @@ class Student extends Person {
   public void dropCourse(Course course) {
     int index = courses.indexOf(course);
     this.courses.remove(index);
+  }
+
+  public String getFacultyNumber() {
+    return facultyNumber;
+  }
+
+  public List<Course> getCourses() {
+    return courses;
+  }
+
+  public List<Double> getGrades() {
+    return grades;
+  }
+
+  public FormOfEducation getFormOfEducation() {
+    return form_of_education;
   }
 }

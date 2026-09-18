@@ -1,15 +1,14 @@
-enum Role {
-  TEACHER,
-  STUDENT
-}
+package model;
 
-class Person {
+import model.enums.Role;
+
+public class Person {
   private String id;
   private String name;
   private int age;
   private Role role;
 
-  public Person(String id, String name, Role role) {
+  public Person(String name, String id, Role role) {
     this.id = id;
     this.name = name;
     this.role = role;
@@ -23,7 +22,11 @@ class Person {
     return name;
   }
 
-  // public abstract String getRole();
+  public int getAge() {
+    return age;
+  }
 
-  // public abstract List getSchedule;
+  public Role getRole() {
+    return role;
+  }
 }
