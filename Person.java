@@ -4,37 +4,23 @@ enum Role {
 }
 
 class Person {
-  private int id;
-  private String first_name;
-  private String last_name;
+  private String id;
+  private String name;
   private int age;
-  private String number;
-  private String birth_place;
-  private String gender;
   private Role role;
 
-  public int getId() {
+  public Person(String id, String name, Role role) {
+    this.id = id;
+    this.name = name;
+    this.role = role;
+  }
+
+  public String getId() {
     return id;
   }
 
   public String getName() {
-    return first_name + " " + last_name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-  public String getNumber() {
-    return number;
-  }
-
-  public String birth_place() {
-    return birth_place;
-  }
-
-  public String gender() {
-    return gender;
+    return name;
   }
 
   // public abstract String getRole();
