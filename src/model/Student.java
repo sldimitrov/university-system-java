@@ -9,35 +9,23 @@ public class Student extends Person {
   private String facultyNumber;
   private List<Course> courses;
   private List<Double> grades;
-  private FormOfEducation form_of_education;
+  private FormOfEducation formOfEducation;
 
-  public Student(String name, String id, Role role) {
+  public Student(String name, String id, Role role, String facultyNumber) {
     super(name, id, role);
     this.facultyNumber = "";
     this.courses = new ArrayList<>();
     this.grades = new ArrayList<>();
-    this.form_of_education = FormOfEducation.IN_PERSON;
+    this.formOfEducation = FormOfEducation.IN_PERSON;
   }
 
-  public void enroll(Course course) {
-    this.courses.add(course);
-    grades.add(0.0);
-  }
-
-  public void assignMarks(Course course, double grade) {
-    int index = courses.indexOf(course);
-    if (index != -1) {
-      grades.set(index, grade);
-    }
-  }
-
-  public void dropCourse(Course course) {
-    int index = courses.indexOf(course);
-    this.courses.remove(index);
-  }
-
+  // Setters / Getters
   public String getFacultyNumber() {
     return facultyNumber;
+  }
+
+  public void setFacultyNumber(String facultyNumber) {
+    this.facultyNumber = facultyNumber;
   }
 
   public List<Course> getCourses() {
@@ -49,6 +37,40 @@ public class Student extends Person {
   }
 
   public FormOfEducation getFormOfEducation() {
-    return form_of_education;
+    return formOfEducation;
+  }
+
+  public void setFormOfEducation(FormOfEducation formOfEducation) {
+    this.formOfEducation = formOfEducation;
+  }
+
+  // Business Logic
+  public void enroll(Course course) {
+    this.courses.add(course);
+    grades.add(0.0);
+  }
+
+  public void assignMarks(Course course, double grade) {
+    int index = courses.indexOf(course);
+    if (index != -1) {
+      grades.set(index, grade);
+    } else {
+      System.out.println("Invalid operation! Course is not found!");
+    }
+  }
+
+  public void dropCourse(Course course) {
+    int index = courses.indexOf(course);
+    if (index != -1) {
+      this.courses.remove(index);
+    } else {
+      System.out.println("Invalid operation! Course is not found!");
+    }
+  }
+
+  // Overriding parent method
+  @Override
+  public Role getRole() {
+    return Role.STUDENT;
   }
 }

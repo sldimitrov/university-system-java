@@ -2,11 +2,11 @@ package model;
 
 import model.enums.Role;
 
-public class Person {
-  private String id;
-  private String name;
-  private int age;
-  private Role role;
+public abstract class Person {
+  protected  String id;
+  protected String name;
+  protected int age;
+  protected Role role;
 
   public Person(String name, String id, Role role) {
     this.id = id;
@@ -26,7 +26,5 @@ public class Person {
     return age;
   }
 
-  public Role getRole() {
-    return role;
-  }
+  public abstract Role getRole();
 }
