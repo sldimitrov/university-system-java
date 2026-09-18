@@ -73,4 +73,10 @@ public class Student extends Person {
   public Role getRole() {
     return Role.STUDENT;
   }
+
+  // Used for prettier instance's print
+  // @Override
+  // public String toString() {
+  //   return "";
+  // }
 }

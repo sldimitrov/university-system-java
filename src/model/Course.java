@@ -10,6 +10,7 @@ public class Course {
   private Teacher teacher;
   private Room room;
 
+  // Constructor
   public Course(int code, String title, List<Student> students, int capacity, Teacher teacher, Room room) {
     this.code = code;
     this.title = title;
@@ -19,6 +20,7 @@ public class Course {
     this.room = room;
   }
 
+  // Setters / Getters
   public int getCode() {
     return code;
   }
@@ -42,4 +44,12 @@ public class Course {
   public Room getRoom() {
     return room;
   } 
+
+  // Business logic
+
+  // Used for prettier instance's print
+  // @Override
+  // public String toString() {
+  //   return "";
+  // }
 }

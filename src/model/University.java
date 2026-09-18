@@ -9,6 +9,7 @@ public class University {
   private List<Student> students;
   private List<Room> rooms;
 
+  // Constructor
   public University(String name, List<Course> courses, List<Teacher> teachers, List<Student> students, List<Room> rooms) {
     this.name = name;
     this.courses = courses;
@@ -17,6 +18,7 @@ public class University {
     this.rooms = rooms;
   }
 
+  // Getters / Setters
   public String getName() {
     return name;
   }
@@ -37,7 +39,14 @@ public class University {
     return rooms;
   }
 
+  // Business logic
   public void enrollStudentInCourse(Student student, Course course) {
     // course.addStudent(student);
   }
+
+  // Used for prettier instance's print
+  // @Override
+  // public String toString() {
+  //   return "";
+  // }
 }

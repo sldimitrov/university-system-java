@@ -8,12 +8,14 @@ public abstract class Person {
   protected int age;
   protected Role role;
 
+  // Constructor
   public Person(String name, String id, Role role) {
     this.id = id;
     this.name = name;
     this.role = role;
   }
 
+  // Getters / Setters
   public String getId() {
     return id;
   }
@@ -26,5 +28,6 @@ public abstract class Person {
     return age;
   }
 
+  // Abstract method
   public abstract Role getRole();
 }

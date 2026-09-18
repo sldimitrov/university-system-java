@@ -35,4 +35,10 @@ public class TimeSlot {
   public Room getRoom() {
     return room;
   }
+
+  // Used for prettier instance's print
+  // @Override
+  // public String toString() {
+  //   return "";
+  // }
 }
